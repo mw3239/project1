@@ -1,0 +1,40 @@
+<!-- Analysis Page -->
+{% extends "layout.html" %}
+{% block content %}
+<h1>Japanese Learning Application</h1>
+<h3>Analysis</h3>
+
+<div class="jumbotron">
+
+<div class="container">
+	<h3>Most Common Words</h3>
+	<p>{{maxword}}</p>
+	<p>Appeared {{maxcountw}} time(s).</p>
+</div>
+<div class="container">
+	<h3>Most Common Kanji</h3>
+	<p>{{maxkanji}}</p>
+	<p>Apeared {{maxcountk}} time(s).</p>
+</div>
+<div class="container">
+	<h3>Reading Level Difficulty</h3>
+	<p>Your search has a difficulty level of JLPT {{readlvl}}.</p>
+</div>
+<div class="container">
+	<h3>Rarest Kanji</h3>
+	<p>The rarest kanji is {{rarest_char}}.</p>
+	<p>It has the appearance rank of {{rarest_rank}} out of 2136.</p>
+</div>
+<div class="container">
+	<h3>Most Difficult to Write Kanji</h3>
+	<p>The most difficult to write kanji is {{diff_kanji}}.</p>
+	<p>It takes {{diff_strokes}} strokes to write.</p>
+</div>
+<div class="container">
+	<h3>Most Common Part of Speech</h3>
+	<p>The most common part of speech is {{maxpos}}.</p>
+</div>
+
+</div>
+
+{% endblock content %}

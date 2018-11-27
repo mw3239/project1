@@ -1,0 +1,22 @@
+<!-- Register Page -->
+{% extends "layout.html" %}
+{% block content %}
+<h1>Register</h1>
+{% if session['logged_in'] %}
+<p>You're logged in already!</p>
+{% elif fail is defined %}
+<form action="/register" method="POST">
+  <input type="username" name="username" placeholder="Username">
+  <!-- <input type="password" name="password" placeholder="Password"> -->
+  <input type="submit" value="Register">
+</form>
+<br><br>
+<p>{{fail}}</p>
+{% else %}
+<form action="/register" method="POST">
+  <input type="username" name="username" placeholder="Username">
+  <!-- <input type="password" name="password" placeholder="Password"> -->
+  <input type="submit" value="Register">
+</form>
+{% endif %}
+{% endblock content %}
