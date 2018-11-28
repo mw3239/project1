@@ -11,7 +11,7 @@ There are two ways to run the application, through the virtual instance or local
 Have a working web browser such as firefox or chrome
 Enter in the following URL
 ```
-104.196.39.47:8111
+35.237.128.17:8111
 ```
 
 ### To run locally
