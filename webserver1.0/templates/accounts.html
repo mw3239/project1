@@ -5,9 +5,12 @@
 <h2>User Account</h2>
 <br><br>
 {% if history is defined %}
-<h3 align="left">Search History</h3>
-{% for i, entry in enumerate( history) %}
-<p align="left">{{i+1}}: {{entry}}</p>
-{% endfor %}
+	<h3 align="left">Search History</h3>
+	{% for i, entry in enumerate( history) %}
+		<p align="left">{{i+1}}: {{entry}}</p>
+	{% endfor %}
+{% else %}
+<p>You have not logged in as user</p>
 {% endif %}
+
 {% endblock content %}

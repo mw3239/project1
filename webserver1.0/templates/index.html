@@ -3,11 +3,25 @@
 {% block content %}
 <h1>Japanese Learning Application</h1>
 <br><br>
-<form name="form" role="search" method="POST" action="/send">
+<!--<form name="form" role="search" method="POST" action="/send">
   <p>
     <input type="text" name="url" size="50">
     <input class="btn btn-primary" type="submit" name="submitBT" value="Search">
   </p>
+</form>-->
+<!--<div class="col-12 col-md-10 col-lg-8">-->
+<form class="card card-sm" name="form" role="search" method="POST" action="/send">
+	<div class="card-body row no-gutters align-items-center">
+		<div class="col-auto">
+		<i class="fas fa-search h4 text-body"></i>
+ 		</div>
+ 		<div class="col">
+ 		<input class="form-control form-control-lg form-control-borderless" type="search" name="url" placeholder="Enter a Japanese word, sentence or paragraph you want to analyze!">
+		</div>
+ 		<div class="col-auto">
+ 		<button class="btn btn-lg btn-success" type="submit">Search</button>
+		</div>
+	</div>
 </form>
 
 {% if input is defined %}
@@ -36,7 +50,6 @@
 {% endif %}
 <br><br>
 
-
 {% if dictionary is defined %}
 
 <div class="row mb-2">
@@ -57,5 +70,4 @@
 {% endfor %}
 </div>
 {% endif %}
-
 {% endblock content %}

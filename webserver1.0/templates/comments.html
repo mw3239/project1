@@ -1,0 +1,32 @@
+<!-- Comments Page -->
+{% extends "layout.html" %}
+{% block content %}
+<h1>Japanese Learning Application</h1>
+<h2>Comments</h2>
+{% if comments is defined %}
+<div class="my-3 p-3 bg-white rounded shadow-sm" align="left">
+<h2 class="border-bottom border-gray pb-2 md-0">Recent Comments</h2>
+
+{% for username, comment, d in zip(usernames, comments, dates) %}
+<div class="media text-muted pt-3">
+	<p class="media-body pb-3 mb-0 medium 1h-125 border-bottom border-gray">
+	<strong class="d-block text-gray-dark">@{{username}}</strong>
+	{{comment}} - {{d}}
+	</p>
+</div>	
+{% endfor %}
+</div>
+{% endif %}
+
+<div class="container" align="left">
+<h2>Submit Comments:</h2>
+<p>Have a question? Want to talk with other Japanese learners? Share your experiences here!</p>
+<form action="/comments" method="POST">
+	<textarea class="form-control" rows="10" name="comment"></textarea>
+	<input type="submit" value="Submit">
+</form>
+</div>
+{% if fail is defined %}
+<p>{{fail}}</p>
+{% endif %}
+{% endblock content %}
