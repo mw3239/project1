@@ -109,11 +109,27 @@ maxpos = ""
 username = ""
 url = ""
 
+# Reset global variables
+def reset():
+    global maxkanji, maxcountk, maxword, maxcountw, readlvl, rarest_char, rarest_rank, diff_kanji, diff_strokes, maxpos, url
+    maxkanji = ''
+    maxcountk = 0
+    maxword = ''
+    maxcountw = 0
+    readlvl = 0
+    rarest_char = ""
+    rarest_rank = 0
+    diff_kanji = ""
+    diff_strokes = 0
+    maxpos = ""
+    url = ""
+
 # Search Functionality
 @app.route("/send", methods=['GET', 'POST'])
 def send():
     global maxkanji, maxcountk, maxword, maxcountw, readlvl, rarest_char, rarest_rank, diff_kanji, diff_strokes, maxpos, username, url
-    
+    # reset global variables
+    reset()  
     # Check search request and its length
     if request.method == 'POST' and len(request.form['url']) != 0:
         url = request.form['url']	
@@ -152,11 +168,7 @@ def send():
 			enclvl.append(result['jlpt'])
 		cursor.close()
 
-		# If no kanji characters were found return input
-		if len(character) == 0:
-        		return render_template('index.html', input=url)
-	
-		# Check if the number of number of times that the character is in the list is 1
+			# Check if the number of number of times that the character is in the list is 1
 		if len(character) != 0 and encounteredk.count(character[0]) == 1:
 			kanji.append(character)
 	
@@ -185,6 +197,11 @@ def send():
 			if encounteredw.count(word[0]) == 1:
 				dictionary.append(word)
 
+	# If no kanji characters were found return input
+	if len(encounteredk) == 0 and len(encounteredw) == 0:
+        	return render_template('index.html', input=url)
+	
+
 	# Find rarest kanji character
 	rarest_query = "SELECT character, rank FROM kanji WHERE character IN ('" +  "', '".join(encounteredk) + "') ORDER BY rank DESC LIMIT 1"
 	rarest = g.conn.execute(rarest_query)
@@ -200,14 +217,16 @@ def send():
 		diff_kanji = result['character']
 		diff_strokes = result['strokes']
 	diff.close()
-
-	maxkanji = max(set(encounteredk), key=encounteredk.count)
+	
+	if len(encounteredk) != 0:	
+		maxkanji = max(set(encounteredk), key=encounteredk.count)
+		enclvl = [int(x) for x in enclvl]
+		readlvl = round(mean(enclvl))
 	maxcountk = encounteredk.count(maxkanji)
-	maxword = max(set(encounteredw), key=encounteredw.count)
-	maxcountw = encounteredw.count(maxword)
-	enclvl = [int(x) for x in enclvl]
-	readlvl = round(mean(enclvl))
-	maxpos = max(set(encpos),key=encpos.count)
+	if len(encounteredw) != 0:
+		maxword = max(set(encounteredw), key=encounteredw.count)
+		maxcountw = encounteredw.count(maxword)
+		maxpos = max(set(encpos),key=encpos.count)
 
         return render_template('index.html', input=url, kanji_headers=kanji_headers, kanji=kanji, dict_headers=dict_headers, dictionary=dictionary, zip=zip)
 
@@ -268,6 +287,7 @@ def register():
     		g.conn.execute(cmd)
 	except:
 		return render_template('register.html', title='Register', fail='An error occurred, possibily because username is already in use.')
+	return render_template('register.html', title='Register', fail='Successfully registered user account.')
     else:
 	return render_template('register.html', title='Register')
 
@@ -277,7 +297,7 @@ def comments():
     global username
     
     # Look up all existing comments
-    cursor = g.conn.execute("SELECT cid, text, date, username FROM comments, accounts WHERE user_id = uid ORDER BY date DESC")
+    cursor = g.conn.execute("SELECT cid, text, date, username FROM comments, accounts WHERE user_id = uid ORDER BY date DESC, cid DESC")
     comments = []
     dates = []
     usernames = []
@@ -364,8 +384,10 @@ def login():
 # Logout Page
 @app.route("/logout")
 def logout():
+    global username
     session['logged_in'] = False
     session.pop('username', None)
+    username = ""
     return login()
 
 

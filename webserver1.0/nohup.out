@@ -1,14 +1,5 @@
 /usr/local/lib/python2.7/dist-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
   """)
-running on 0.0.0.0:8008
- * Serving Flask app "server" (lazy loading)
- * Environment: production
-   WARNING: Do not use the development server in a production environment.
-   Use a production WSGI server instead.
- * Debug mode: off
- * Running on http://0.0.0.0:8008/ (Press CTRL+C to quit)
-/usr/local/lib/python2.7/dist-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
-  """)
 running on 0.0.0.0:8111
  * Serving Flask app "server" (lazy loading)
  * Environment: production
@@ -16,12 +7,8 @@ running on 0.0.0.0:8111
    Use a production WSGI server instead.
  * Debug mode: off
  * Running on http://0.0.0.0:8111/ (Press CTRL+C to quit)
-160.39.210.23 - - [28/Nov/2018 08:28:07] "GET / HTTP/1.1" 200 -
-160.39.210.23 - - [28/Nov/2018 08:28:07] "GET /static/main.css HTTP/1.1" 200 -
-160.39.210.23 - - [28/Nov/2018 08:28:07] "GET /favicon.ico HTTP/1.1" 404 -
-160.39.210.23 - - [28/Nov/2018 08:28:08] "GET / HTTP/1.1" 200 -
-160.39.210.23 - - [28/Nov/2018 08:28:08] "GET /favicon.ico HTTP/1.1" 404 -
-160.39.210.23 - - [28/Nov/2018 08:28:13] "GET / HTTP/1.1" 200 -
-160.39.210.23 - - [28/Nov/2018 08:28:13] "GET /favicon.ico HTTP/1.1" 404 -
-160.39.210.23 - - [28/Nov/2018 08:28:19] "GET /about HTTP/1.1" 200 -
-160.39.210.23 - - [28/Nov/2018 08:28:19] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 03:47:59] "GET /about HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 03:47:59] "GET / HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 03:47:59] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 03:48:00] "GET / HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 03:48:00] "GET /favicon.ico HTTP/1.1" 404 -
