@@ -44,7 +44,11 @@ There are many functionalities and features implemented in the application
 
 ### Home Page
 
-At the home page, enter any word, sentence, paragraph, or text containing Japanese in the search bar, and enter search get results.
+At the home page, enter any word, sentence, paragraph, or text containing Japanese in the search bar to display information about the kanji and words contained in your entry. 
+
+For kanji, the information includes the number of strokes (so you know how difficult it is to write,) grade level (what grade Japanese children learn that character,) JLPT level (what level of the Japanese Language Proficiency test that word appears on. See the About page for more information on JLPT,) reading (how the character is pronounced in Japanese, english translation of the character, frequency of the word appearing in national newspapers, and frequency rank among all other kanji.
+
+Likewise, for complete words, the information contained includes how the characters are read in Japanese, an english translation of the word, what level of the JLPT test that word appears on, and the part of speech that the word belongs to.
 
 ### About Page
 
