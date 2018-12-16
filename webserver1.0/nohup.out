@@ -9,3 +9,254 @@ running on 0.0.0.0:8111
  * Running on http://0.0.0.0:8111/ (Press CTRL+C to quit)
 160.39.210.23 - - [29/Nov/2018 04:01:59] "GET / HTTP/1.1" 200 -
 160.39.210.23 - - [29/Nov/2018 04:01:59] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 04:03:45] "GET /about HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 04:03:46] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 04:03:46] "GET / HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 04:03:46] "GET /analysis HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 04:03:46] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 04:03:48] "GET /accounts HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 04:03:48] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 04:03:49] "GET /comments HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 04:03:49] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 04:03:50] "GET / HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 04:03:50] "GET /favicon.ico HTTP/1.1" 404 -
+72.89.93.91 - - [29/Nov/2018 15:48:18] "GET /static/main.css HTTP/1.1" 304 -
+72.89.93.91 - - [29/Nov/2018 15:48:18] "GET /favicon.ico HTTP/1.1" 404 -
+209.2.208.89 - - [29/Nov/2018 19:31:05] "GET / HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:31:06] "GET /static/main.css HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:31:06] "GET /favicon.ico HTTP/1.1" 404 -
+209.2.208.89 - - [29/Nov/2018 19:32:13] "GET /about HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:32:13] "GET /about HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:32:30] "GET / HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:32:54] "POST /send HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:34:04] "POST /send HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:34:22] "POST /send HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:34:27] "POST /send HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:34:53] "POST /send HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:35:22] "GET /analysis HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:36:24] "GET /login HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:36:25] "GET /register HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:36:26] "GET /login HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:36:35] "POST /login HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:36:40] "GET /register HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:36:41] "GET /login HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:36:48] "GET /accounts HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:37:01] "GET / HTTP/1.1" 200 -
+[2018-11-29 19:37:08,721] ERROR in app: Exception on /send [POST]
+Traceback (most recent call last):
+  File "/home/mw3239/.local/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/mw3239/.local/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/mw3239/.local/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "server.py", line 145, in send
+    g.conn.execute(insert)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 942, in execute
+    return self._execute_text(object, multiparams, params)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1104, in _execute_text
+    statement, parameters
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
+    context)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 265, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+IntegrityError: (psycopg2.IntegrityError) duplicate key value violates unique constraint "history_pkey"
+DETAIL:  Key (user_id)=(10) already exists.
+ [SQL: "INSERT INTO history(user_id, search) VALUES (10, '\xe7\xa7\x8b\xe7\xaf\xa0\xe5\xae\xae\xe3\x81\x95\xe3\x81\xbe\xe3\x80\x81\xe5\xa4\xa7\xe5\x98\x97\xe7\xa5\xad\xe6\x94\xaf\xe5\x87\xba\xe3\x81\xab\xe7\x96\x91\xe7\xbe\xa9\xe3\x80\x8c\xe5\xae\xae\xe5\x86\x85\xe5\xba\x81\xe3\x80\x81\xe8\x81\x9e\xe3\x81\x8f\xe8\x80\xb3\xe6\x8c\x81\xe3\x81\x9f\xe3\x81\x9a\xe3\x80\x8d \xe3\x80\x80\xe7\xa7\x8b\xe7\xaf\xa0\xe5\xae\xae\xe3\x81\x95\xe3\x81\xbe\xe3\x81\x8c\xef\xbc\x93\xef\xbc\x90\xe6\x97\xa5\xe3\x81\xae\xef\xbc\x95\xef\xbc\x93\xe6\xad\xb3\xe3\x81\xae\xe8\xaa\x95\xe7\x94\x9f\xe6\x97\xa5\xe3\x82\x92\xe5\x89\x8d\xe3\x81\xab\xe7\xb4\x80\xe5\xad\x90\xe3\x81\x95\xe3\x81\xbe\xe3\x81\xa8\xe8\xa8\x98\xe8\x80\x85\xe4\xbc\x9a\xe8\xa6\x8b\xe3\x81\x97\xe3\x80\x81\xe5\xa4\xa9\xe7\x9a\x87\xe3\x81\xae\xe4\xbb\xa3\xe6\x9b\xbf\xe3\x82\x8f\xe3\x82\x8a\xe3\x81\xab\xe4\xbc\xb4\xe3\x81\x86\xe7\x9a\x87\xe5\xae\xa4\xe8\xa1\x8c\xe4\xba\x8b\xe3\x80\x8c\xe5\xa4\xa7\xe5\x98\x97\xe7\xa5\xad\xef\xbc\x88\xe3\x81\xa0\xe3\x81\x84\xe3\x81\x98\xe3\x82\x87\xe3\x81\x86\xe3\x81\x95\xe3\x81\x84\xef\xbc\x89\xe3\x80\x8d\xe3\x81\xab\xe3\x81\xa4\xe3\x81\x84\xe3\x81\xa6\xe3\x80\x81\xe3\x80\x8c\xe5\xae\x97\xe6\x95\x99\xe8\x89\xb2\xe3\x81\x8c\xe5\xbc\xb7\xe3\x81\x84\xe3\x82\x82\xe3\x81\xae\xe3\x82\x92\xe5\x9b\xbd\xe8\xb2\xbb\xe3\x81\xa7\xe8\xb3\x84\xe3\x81\x86\xe3\x81\x93\xe3\x81\xa8\xe3\x81\x8c\xe9\x81\xa9\xe5\xbd\x93\xe3\x81\x8b\xe3\x81\xa9\xe3\x81\x86\xe3\x81\x8b\xe3\x80\x8d\xe3\x81\xa8\xe8\xbf\xb0\xe3\x81\xb9\xe3\x80\x81\xe6\x94\xbf\xe5\xba\x9c\xe3\x81\xaf\xe5\x85\xac\xe8\xb2\xbb\xe3\x82\x92\xe6\x94\xaf\xe5\x87\xba\xe3\x81\x99\xe3\x82\x8b\xe3\x81\xb9\xe3\x81\x8d\xe3\x81\xa7\xe3\x81\xaf\xe3\x81\xaa\xe3\x81\x84\xe3\x81\xa8\xe3\x81\xae\xe8\x80\x83\xe3\x81\x88\xe3\x82\x92\xe7\xa4\xba\xe3\x81\x97\xe3\x81\x9f\xe3\x80\x82\xe3\x81\x93\xe3\x81\xae\xe8\x80\x83\xe3\x81\x88\xe3\x82\x92\xe5\xae\xae\xe5\x86\x85\xe5\xba\x81\xe9\x95\xb7\xe5\xae\x98\xe3\x82\x89\xe3\x81\xab\xe4\xbc\x9d\xe3\x81\x88\xe3\x81\x9f\xe3\x81\x8c\xe3\x80\x8c\xe8\x81\x9e\xe3\x81\x8f\xe8\x80\xb3\xe3\x82\x92\xe6\x8c\x81\xe3\x81\x9f\xe3\x81\xaa\xe3\x81\x8b\xe3\x81\xa3\xe3\x81\x9f\xe3\x80\x8d\xe3\x81\xa8\xe3\x81\x84\xe3\x81\x84\xe3\x80\x81\xe3\x80\x8c\xe9\x9d\x9e\xe5\xb8\xb8\xe3\x81\xab\xe6\xae\x8b\xe5\xbf\xb5\xe3\x81\xaa\xe3\x81\x93\xe3\x81\xa8\xe3\x81\xa0\xe3\x81\xa3\xe3\x81\x9f\xe3\x80\x8d\xe3\x81\xa8\xe8\xbf\xb0\xe3\x81\xb9\xe3\x81\x9f\xe3\x80\x82(\xe6\x9c\x9d\xe6\x97\xa5\xe6\x96\xb0\xe8\x81\x9e\xe3\x83\x87\xe3\x82\xb8\xe3\x82\xbf\xe3\x83\xab)')"] (Background on this error at: http://sqlalche.me/e/gkpj)
+209.2.208.89 - - [29/Nov/2018 19:37:08] "POST /send HTTP/1.1" 500 -
+[2018-11-29 19:37:27,845] ERROR in app: Exception on /send [POST]
+Traceback (most recent call last):
+  File "/home/mw3239/.local/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/mw3239/.local/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/mw3239/.local/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "server.py", line 145, in send
+    g.conn.execute(insert)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 942, in execute
+    return self._execute_text(object, multiparams, params)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1104, in _execute_text
+    statement, parameters
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
+    context)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 265, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+IntegrityError: (psycopg2.IntegrityError) duplicate key value violates unique constraint "history_pkey"
+DETAIL:  Key (user_id)=(10) already exists.
+ [SQL: "INSERT INTO history(user_id, search) VALUES (10, '\xe6\x8e\xa2\xe3\x81\x99')"] (Background on this error at: http://sqlalche.me/e/gkpj)
+209.2.208.89 - - [29/Nov/2018 19:37:27] "POST /send HTTP/1.1" 500 -
+209.2.208.89 - - [29/Nov/2018 19:37:36] "GET /accounts HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:37:38] "GET / HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:37:45] "GET /accounts HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:37:51] "GET /logout HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:37:54] "GET /accounts HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:38:00] "GET /login HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:38:08] "POST /login HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:38:11] "GET /comments HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:38:32] "POST /comments HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:38:38] "GET /register HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:38:40] "GET /logout HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:38:42] "GET /register HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:39:39] "POST /register HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:39:42] "GET /login HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:39:46] "POST /login HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:39:49] "GET /accounts HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:40:03] "GET /about HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:40:05] "GET /analysis HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:40:13] "GET /comments HTTP/1.1" 200 -
+209.2.208.89 - - [29/Nov/2018 19:43:47] "GET /about HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 19:44:02] "GET / HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 19:44:08] "GET / HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 19:44:08] "GET /static/main.css HTTP/1.1" 304 -
+160.39.210.23 - - [29/Nov/2018 19:44:13] "GET /login HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 19:44:28] "POST /login HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 19:44:30] "GET /accounts HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 19:44:51] "GET / HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 19:45:41] "GET / HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 19:45:41] "GET /static/main.css HTTP/1.1" 304 -
+160.39.210.23 - - [29/Nov/2018 19:45:41] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 19:59:49] "GET /login HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 19:59:49] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 19:59:51] "POST /login HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 19:59:52] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 19:59:53] "GET / HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 19:59:53] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 19:59:58] "POST /send HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 19:59:58] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 20:00:00] "GET /accounts HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 20:00:00] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 20:00:01] "GET /login HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 20:00:01] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 20:00:02] "GET / HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 20:00:02] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 20:00:06] "POST /send HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 20:00:06] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 20:00:08] "GET /accounts HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 20:00:08] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 20:01:19] "GET / HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 20:01:19] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 20:01:21] "GET /about HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 20:01:21] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 20:01:21] "GET /analysis HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 20:01:21] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 20:01:22] "GET /accounts HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 20:01:22] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 20:49:53] "GET / HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 20:49:53] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 20:49:56] "GET /register HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 20:49:56] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 20:49:58] "GET /logout HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 20:49:58] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 20:49:59] "GET /register HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 20:49:59] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 20:50:20] "GET /comments HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 20:50:21] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 20:50:32] "GET /analysis HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 20:50:32] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 20:50:34] "GET /about HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 20:50:34] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 20:50:36] "GET / HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 20:50:36] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 20:50:37] "GET /logout HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 20:50:37] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 20:50:38] "GET /login HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 20:50:38] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 20:50:40] "GET /register HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 20:50:40] "GET /favicon.ico HTTP/1.1" 404 -
+160.39.210.23 - - [29/Nov/2018 21:13:00] "GET /about HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 21:13:00] "GET /analysis HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 21:13:02] "GET /accounts HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 21:13:04] "GET /comments HTTP/1.1" 200 -
+160.39.210.23 - - [29/Nov/2018 21:13:08] "GET / HTTP/1.1" 200 -
+72.89.93.91 - - [30/Nov/2018 05:01:46] "GET /send HTTP/1.1" 200 -
+72.89.93.91 - - [30/Nov/2018 05:01:46] "GET /static/main.css HTTP/1.1" 304 -
+72.89.93.91 - - [30/Nov/2018 05:01:47] "GET /favicon.ico HTTP/1.1" 404 -
+72.89.93.91 - - [30/Nov/2018 05:01:55] "POST /send HTTP/1.1" 200 -
+72.89.93.91 - - [30/Nov/2018 05:03:56] "GET /analysis HTTP/1.1" 200 -
+173.56.90.249 - - [03/Dec/2018 00:59:22] "GET / HTTP/1.1" 200 -
+173.56.90.249 - - [03/Dec/2018 00:59:22] "GET /static/main.css HTTP/1.1" 200 -
+173.56.90.249 - - [03/Dec/2018 00:59:22] "GET /favicon.ico HTTP/1.1" 404 -
+[2018-12-03 00:59:26,419] ERROR in app: Exception on /send [POST]
+Traceback (most recent call last):
+  File "/home/mw3239/.local/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/mw3239/.local/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/mw3239/.local/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "server.py", line 154, in send
+    cursor = g.conn.execute("SELECT * FROM kanji WHERE character = '" + url[i] + "'")
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 942, in execute
+    return self._execute_text(object, multiparams, params)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1104, in _execute_text
+    statement, parameters
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
+    context)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1416, in _handle_dbapi_exception
+    util.reraise(*exc_info)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+TypeError: 'dict' object does not support indexing
+173.56.90.249 - - [03/Dec/2018 00:59:26] "POST /send HTTP/1.1" 500 -
+[2018-12-03 00:59:33,593] ERROR in app: Exception on /send [POST]
+Traceback (most recent call last):
+  File "/home/mw3239/.local/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/mw3239/.local/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/mw3239/.local/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "server.py", line 154, in send
+    cursor = g.conn.execute("SELECT * FROM kanji WHERE character = '" + url[i] + "'")
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 942, in execute
+    return self._execute_text(object, multiparams, params)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1104, in _execute_text
+    statement, parameters
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
+    context)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 265, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/home/mw3239/.local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+ProgrammingError: (psycopg2.ProgrammingError) unterminated quoted string at or near "'''"
+LINE 1: SELECT * FROM kanji WHERE character = '''
+                                              ^
+ [SQL: "SELECT * FROM kanji WHERE character = '''"] (Background on this error at: http://sqlalche.me/e/f405)
+173.56.90.249 - - [03/Dec/2018 00:59:33] "POST /send HTTP/1.1" 500 -
+173.56.90.249 - - [03/Dec/2018 00:59:36] "POST /send HTTP/1.1" 200 -
+198.108.67.48 - - [03/Dec/2018 13:06:24] "GET / HTTP/1.1" 200 -
